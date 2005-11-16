@@ -1,4 +1,3 @@
-# $Revision: 1.1 $
 # TODO:
 # - adaptarize desktop file
 # - choose better group
