@@ -1,0 +1,16 @@
+diff -urN buoh-0.8.orig/data/buoh.desktop.in buoh-0.8/data/buoh.desktop.in
+--- buoh-0.8.orig/data/buoh.desktop.in	2005-10-01 02:20:15.000000000 +0200
++++ buoh-0.8/data/buoh.desktop.in	2005-11-16 21:47:22.041580384 +0100
+@@ -2,9 +2,9 @@
+ _Name=Buoh Online Comics Reader
+ _Comment=Read your favourite comics
+ Exec=buoh
+-Icon=buoh64x64.png
+-Terminal=0
++Icon=buoh
++Terminal=false
+ Type=Application
+-Categories=Application;Utility;
++Categories=GTK;GNOME;Utility;
+ StartupNotify=true
+ Encoding=UTF-8
