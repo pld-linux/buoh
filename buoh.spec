@@ -13,11 +13,11 @@ Source0:	http://buoh.steve-o.org/downloads/%{name}-%{version}.tar.gz
 URL:		http://buoh.steve-o.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	GConf2-devel >= 2.2
 BuildRequires:	gtk+2-devel >= 2.7
+BuildRequires:	libgnomeui-devel >= 2.6
 BuildRequires:	libsoup-devel >= 2.2
 BuildRequires:	libtool
-BuildRequires:	libgnomeui-devel >= 2.6
-BuildRequires:	GConf2-devel >= 2.2
 Requires(post,preun):	GConf2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
