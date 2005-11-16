@@ -27,7 +27,7 @@ Buoh has a number of features, including:
 - select your favorites comic through a list of more than 130 comics,
 - easy, simple an eye-candy view of an online comic,
 - browsing over the comic strip archives,
-- saving a comic to disk
+- saving a comic to disk,
 - integration with GNOME (respecting the lockdowns and HIG
   compliance).
 
