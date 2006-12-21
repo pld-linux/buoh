@@ -2,7 +2,7 @@ Summary:	The online comic reader application for GNOME
 Summary(pl):	Czytników komiksów online dla GNOME
 Name:		buoh
 Version:	0.8.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://buoh.steve-o.org/downloads/%{name}-%{version}.tar.gz
