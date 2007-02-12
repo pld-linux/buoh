@@ -1,5 +1,5 @@
 Summary:	The online comic reader application for GNOME
-Summary(pl):	Czytników komiksów online dla GNOME
+Summary(pl.UTF-8):   CzytnikÃ³w komiksÃ³w online dla GNOME
 Name:		buoh
 Version:	0.8.1
 Release:	2
@@ -33,15 +33,15 @@ Buoh has a number of features, including:
 - integration with GNOME (respecting the lockdowns and HIG
   compliance).
 
-%description -l pl
-Buoh jest aplikacj± umo¿liwiaj±c± czytanie periodycznie umieszczanych
-w sieci pasków z komiksami.
-Buoh posiada wiele mo¿liwo¶ci, miêdzy innymi:
-- wybór preferowanych komiksów spo¶ród ponad 130 dostêpnych,
-- ³atwe i proste przegl±danie komiksu,
-- przegl±danie archiwum komiksu,
+%description -l pl.UTF-8
+Buoh jest aplikacjÄ… umoÅ¼liwiajÄ…cÄ… czytanie periodycznie umieszczanych
+w sieci paskÃ³w z komiksami.
+Buoh posiada wiele moÅ¼liwoÅ›ci, miÄ™dzy innymi:
+- wybÃ³r preferowanych komiksÃ³w spoÅ›rÃ³d ponad 130 dostÄ™pnych,
+- Å‚atwe i proste przeglÄ…danie komiksu,
+- przeglÄ…danie archiwum komiksu,
 - zapis komiksu na dysk,
-- integracjê ze ¶rodowiskiem GNOME.
+- integracjÄ™ ze Å›rodowiskiem GNOME.
 
 %prep
 %setup -q
