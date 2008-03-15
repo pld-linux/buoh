@@ -1,24 +1,28 @@
 Summary:	The online comic reader application for GNOME
 Summary(pl.UTF-8):	Czytników komiksów online dla GNOME
 Name:		buoh
-Version:	0.8.1
-Release:	3
+Version:	0.8.2
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://buoh.steve-o.org/downloads/%{name}-%{version}.tar.gz
-# Source0-md5:	5d05a51d7c6616d93e93df3465b49fe7
+Source0:	http://buoh.steve-o.org/downloads/%{name}-%{version}.tar.bz2
+# Source0-md5:	50474a8712ad20ab36d8f8058a4647fb
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-libsoup24.patch
 URL:		http://buoh.steve-o.org/
 BuildRequires:	GConf2-devel >= 2.2.0
-BuildRequires:	autoconf >= 2.52
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.57
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.7.0
-BuildRequires:	intltool >= 0.11
-BuildRequires:	libgnomeui-devel >= 2.6
-BuildRequires:	libsoup-devel >= 2.2
+BuildRequires:	gnome-common
+BuildRequires:	gtk+2-devel >= 2:2.8.0
+BuildRequires:	intltool >= 0.36.2
+BuildRequires:	libgnomeui-devel >= 2.6.0
+BuildRequires:	libsoup-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.311
+Requires(post,postun):	gtk+2
 Requires(post,preun):	GConf2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,39 +50,41 @@ Buoh posiada wiele możliwości, między innymi:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
-%{__autoheader}
 %{__automake}
+%{__autoheader}
 %{__autoconf}
 %configure
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-cp $RPM_BUILD_ROOT%{_datadir}/%{name}/pixmaps/buoh64x64.png $RPM_BUILD_ROOT%{_pixmapsdir}/buoh.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
 %gconf_schema_install buoh.schemas
+%update_icon_cache hicolor
 
 %preun
 %gconf_schema_uninstall buoh.schemas
 
+%postun
+%update_icon_cache hicolor
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*.png
+%attr(755,root,root) %{_bindir}/buoh
+%{_datadir}/buoh
+%{_desktopdir}/buoh.desktop
+%{_iconsdir}/hicolor/*/*/*.png
 %{_sysconfdir}/gconf/schemas/buoh.schemas
