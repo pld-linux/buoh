@@ -13,7 +13,7 @@ URL:		http://buoh.steve-o.org/
 BuildRequires:	GConf2-devel >= 2.2.0
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-common
 BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	intltool >= 0.36.2
